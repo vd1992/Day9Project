@@ -43,4 +43,18 @@ let getTime=function(){
 //execute time function once on load, well, 1 ms after load
 setTimeout(getTime,1);
 
+//GENERATING A CONTACT LIST FOR CONTACT US//
+//create and run function that has a set array of names+numbers, then loops to append them to a holder div, then execute function 
+let contactCreate=function(){
+    arrNames=["Roberticus Bobeus", "Umbra Noctus", "John Doe", "Vachan Dhillon"];
+    arrNums=["123-456", "999-9999", "911", "123-456-7890"];
+    let contactHold=document.getElementById("listHold");
+    for(let i=0;i<4;i++){
+        let pContact=document.createElement("p");
+        pContact.innerHTML=`${arrNames[i]}, number: ${arrNums[i]}`;
+        contactHold.appendChild(pContact);
+    }
+}
+contactCreate();
+
 //

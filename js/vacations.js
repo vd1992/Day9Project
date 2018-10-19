@@ -1,3 +1,5 @@
+//Vachan Dhillon, 2018/10/19, JavaScript Final Project, vachan.dhillon@edu.sait.ca
+
 // SETTING THE TIME IN THE FOOTER//
 //the function to be called later, this takes a zero-indexed number and returns the corresponding full month name
 let monthName=function(num){

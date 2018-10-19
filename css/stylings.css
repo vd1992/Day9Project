@@ -1,3 +1,4 @@
+/* Vachan Dhillon, 2018/10/19, JavaScript Final Project, vachan.dhillon@edu.sait.ca */
 body{
     width:100%;
     height:100vh;
@@ -13,11 +14,12 @@ body{
     justify-content: flex-start;
     width:100%;
     align-items: center;
-    background-color: rgb(229, 226, 226);
+    background-image: linear-gradient(to right,transparent,rgb(167, 230, 255));
+    margin-bottom:70px;
 }
 
 .navBar h2{
-    margin-left:25px;
+    margin-left:30px;
     margin-right:auto;
 }
 
@@ -52,11 +54,32 @@ body{
 /* mobile menu */
 .mobileMenu{
     display: none;
+    position:absolute;
     z-index: 1;
+    animation-name: menuenter;
+    animation-duration: 1.5s;
 }
+    @keyframes menuenter{
+        from{
+            margin-left: 100%;
+        }
+        to{
+            margin-left:0%;
+        }
+    }
+
+.mobileMenu ul li{
+    background-color: rgb(162, 253, 246);
+    padding:1px;
+}
+
+.mobileMenu ul li:hover{
+    background-color: skyblue;
+}
+
 @media (max-width: 620px){
     .mobileMenu{
-        display: inline
+        display: flex;
     }
     .theLinks{
         display: none;
@@ -71,21 +94,29 @@ body{
     padding: 5px;
 }
 
-
 /* INDEX CONTENT */
 .indexContent{
     display: flex;
     flex-direction: column;
     width:50%;
-    margin-top:100px;
+}
+
+.bodyIndex{
+    background: linear-gradient(to right, transparent, white), url("../pics/indexWall.jfif");
 }
 
 /* CONTACT US CONTENT */
+.contactBody{
+    background: linear-gradient(to right, transparent, white), url("../pics/contactBody.jfif");
+}
+
 .contactContent{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:50%;
+    width:30%;
+    border: solid 1px grey;
+    background-color: white;
 }
 
 /* VACATION PACKAGES */
@@ -99,24 +130,22 @@ body{
 }
 
 .packs{
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height:100px; */
     width:200px;
     background-color: rgb(216, 216, 216);
     padding:5px;
 }
 
 .packs:hover{
-    background-color:rgb(202, 202, 202)
+    background-color:skyblue;
 }
 
 .pImage{
     margin-top:10px;
     height:400px;
-    width:400px;
+    width:500px;
     background-image: url("../pics/vacationDefault.jfif");
     background-size:cover;
 }
@@ -125,12 +154,45 @@ body{
     width:100%;
 }
 
+/* //REGISTER PAGE// */
+.regForm{
+    border:solid 1px black;
+    padding:5px;
+    margin-bottom:20px;
+}
+
+.regForm h2{
+    margin:0;
+    margin-left:45px;
+}
+
+.regForm input{
+    margin-bottom:5px;
+}
+
+.subHold{
+    margin-top:5px;
+    display:flex;
+    justify-content: center;
+    margin-bottom:5px;
+}
+
+.subHold button:hover{
+    background-color:skyblue;
+}
+
+#randomUser{
+    display:flex;
+    flex-wrap: wrap;
+    
+}
+
 /* FOOTER */
 .footer{
-    position:absolute;
+    position: absolute;
     bottom:0;
     display:flex;
     justify-content: center;
     width:100%;
-    background-color: rgb(229, 226, 226);
+    background-image: linear-gradient(to right,transparent,rgb(167, 230, 255));
 }

@@ -32,8 +32,9 @@
     </div>
 
     <div id="formHolder" class="regForm">
-        <form name="myForm">
-            <label for="name">Enter name:</label>
+        <h2>Please Fill Out the Following:</h2>
+        <form id="regFormId" name="myForm">
+            <label for="name">Enter Name:</label>
             <input name="name" type="text" required>
             <br/>
             <label for="address">Enter Address</label>
@@ -54,11 +55,17 @@
             <label for="phone">Enter Phone Number</label>
             <input name="phone" type="number" required>
             <br/>
-            <button id="subM" type="submit">Submit</button>
+            <div class="subHold">
+                <button id="subM" type="submit">Submit</button>
+            </div>
         </form>
         <div id="errorM">
             
         </div>
+    </div>
+
+    <div id="randomUser">
+
     </div>
 
     <div class="footer">

@@ -1,3 +1,5 @@
+//Vachan Dhillon, 2018/10/19, JavaScript Final Project, vachan.dhillon@edu.sait.ca
+
 // SETTING THE TIME IN THE FOOTER//
 //the function to be called later, this takes a zero-indexed number and returns the corresponding full month name
 let monthName=function(num){
@@ -46,25 +48,47 @@ setTimeout(getTime,1);
 //postal code format checking
 let buttonSub=document.getElementById("subM");
 buttonSub.addEventListener("click",() => {
-    //get postal code value, generate regex expression and the error message holder
-    let postal=document.myForm.postal.value;
-    let tester=new RegExp(/\w{6}/);
-    let errorMes=document.getElementById("errorM");
-    errorMes.innerHTML="";
+        //get postal code value, generate regex expression and the error message holder
+        let postal=document.myForm.postal.value;
+        let tester=new RegExp(/\w{6}/);
+        let errorMes=document.getElementById("errorM");
+        errorMes.innerHTML="";
 
-    //test, fails if length is not 6 or if regex fails, add error message and stop submit
-    if(postal.length!=6 || !tester.test(postal)){
-        console.log("bad")
-        errorMes.innerHTML="Please format postal code properly, 6 alphanumeric characters only";
+        //test, fails if length is not 6 or if regex fails, add error message and stop submit
+        if(postal.length!=6 || !tester.test(postal)){
+            console.log("bad")
+            errorMes.innerHTML="Please format postal code properly, 6 alphanumeric characters only";
+            event.preventDefault();
+        }
+
+        //no postal code format problems, then continue
+        else{
+            //allow submission effects here
+        }
+    }
+)
+
+//on submit, rather than send it, give a message that tells it was sent, and prevent default
+let regFormid=document.getElementById("regFormId");
+regFormid.addEventListener("submit", () => {
+        let errorMes=document.getElementById("errorM");
+        errorMes.innerHTML="Sent";
         event.preventDefault();
-    }
-
-    //no postal code format problems, then submit
-    else{
-        console.log(tester.test(postal));
-        //event.preventDefault();
-        //errorMes.innerHTML="Sent";
-    }
 })
 
-//
+//random user fetch from the API
+//fetch a user, then append data to the page, creating the needed elements, fills them before adding to holder div
+fetch("https://randomuser.me/api/")
+.then(response => response.json())
+.then(data => {
+    let randoPerson=document.getElementById("randomUser");
+    let randomImage=document.createElement("img")
+    let randoData=document.createElement("p");
+    let happyMessage=document.createElement("p");
+    happyMessage.innerHTML=". I would recommend the Agency 10/10 times";
+    randoData.innerHTML=`Random Happy Customer: ${data.results[0].name.first}  `
+    randomImage.src=data.results[0].picture.large;
+    randoPerson.appendChild(randomImage);
+    randoPerson.appendChild(randoData);
+    randoPerson.appendChild(happyMessage);
+})

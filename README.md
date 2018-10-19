@@ -1,3 +1,5 @@
 # Day9Project
-Course Project involving HTML+CSS+JavaScript
+Final Javascript Course Project involving HTML+CSS+JavaScript
+Link to view here: 
+
 https://vd1992.github.io/Day9Project/

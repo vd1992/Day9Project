@@ -43,25 +43,28 @@ let getTime=function(){
 //execute time function once on load, well, 1 ms after load
 setTimeout(getTime,1);
 
-//GENERATING A CONTACT LIST FOR CONTACT US//
-//create and run function that has a set array of names+numbers, then loops to append them to a holder div, then execute function 
-let contactCreate=function(){
-    arrNames=["Roberticus Bobeus", "Umbra Noctus", "John Doe", "Vachan Dhillon"];
-    arrNums=["123-456", "999-9999", "911", "123-456-7890"];
-    let contactHold=document.getElementById("listHold");
-    for(let i=0;i<4;i++){
-        let pContact=document.createElement("p");
-        pContact.innerHTML=`${arrNames[i]}, number: ${arrNums[i]}`;
-        contactHold.appendChild(pContact);
-    }
-}
-contactCreate();
-
 //postal code format checking
 let buttonSub=document.getElementById("subM");
 buttonSub.addEventListener("click",() => {
+    //get postal code value, generate regex expression and the error message holder
     let postal=document.myForm.postal.value;
-    console.log(postal);
+    let tester=new RegExp(/\w{6}/);
+    let errorMes=document.getElementById("errorM");
+    errorMes.innerHTML="";
+
+    //test, fails if length is not 6 or if regex fails, add error message and stop submit
+    if(postal.length!=6 || !tester.test(postal)){
+        console.log("bad")
+        errorMes.innerHTML="Please format postal code properly, 6 alphanumeric characters only";
+        event.preventDefault();
+    }
+
+    //no postal code format problems, then submit
+    else{
+        console.log(tester.test(postal));
+        //event.preventDefault();
+        //errorMes.innerHTML="Sent";
+    }
 })
 
 //

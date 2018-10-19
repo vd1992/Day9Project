@@ -57,11 +57,4 @@ let contactCreate=function(){
 }
 contactCreate();
 
-//postal code format checking
-let buttonSub=document.getElementById("subM");
-buttonSub.addEventListener("click",() => {
-    let postal=document.myForm.postal.value;
-    console.log(postal);
-})
-
 //

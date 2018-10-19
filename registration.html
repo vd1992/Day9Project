@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./stylings.css">
+    <link rel="stylesheet" href="./css/stylings.css">
     <title>Register</title>
     <!-- Vachan Dhillon, 2018/10/19, JavaScript Final Project, vachan.dhillon@edu.sait.ca -->
 </head>
@@ -22,29 +22,43 @@
         </div>
     </div>
 
-    <div class="regForm">
+    <div class="mobileMenu">
+        <ul class="mlinkContainer">
+            <li class="mlinks"><a href="./index.html">Welcome</a></li>
+            <li class="mlinks"><a href="./vacationPackage.html">Our Vacations</a></li>
+            <li class="mlinks"><a href="./registration.html">Register</a></li>
+            <li class="mlinks"><a href="./contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div id="formHolder" class="regForm">
         <form name="myForm">
             <label for="name">Enter name:</label>
-            <input name="name" type="text">
+            <input name="name" type="text" required>
             <br/>
             <label for="address">Enter Address</label>
-            <input name="address" type="text">
+            <input name="address" type="text" required>
             <br/>
             <label for="city">Enter City</label>
-            <input name="city" type="text">
+            <input name="city" type="text" required>
             <br/>
             <label for="province">Enter Province</label>
-            <input name="province" type="text">
+            <input name="province" type="text" required>
             <br/>
-            <label for="postal">Enter Postal Code format ABC-DEF</label>
-            <input name="postal" type="text">
+            <label for="postal">Enter Postal Code format "ABCDEF"</label>
+            <input name="postal" type="text" required>
             <br/>
             <label for="email">Enter Email Address</label>
-            <input name="email" type="text">
+            <input name="email" type="text" required>
             <br/>
             <label for="phone">Enter Phone Number</label>
-            <input name="phone" type="number">
+            <input name="phone" type="number" required>
+            <br/>
+            <button id="subM" type="submit">Submit</button>
         </form>
+        <div id="errorM">
+            
+        </div>
     </div>
 
     <div class="footer">
@@ -53,6 +67,6 @@
             
 </body>
 
-<script src="./day9Scipts.js"></script>
+<script src="./js/register.js"></script>
 
 </html>
